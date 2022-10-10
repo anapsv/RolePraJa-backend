@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ILoginData, IRegisterData } from '../types/authTypes';
+import { ILoginData, IRegisterData, IProfileData } from '../types/authTypes';
 import * as authService from '../services/authService';
 
 export async function registerUser(req: Request, res: Response) {
@@ -16,4 +16,10 @@ export async function loginUser(req: Request, res: Response) {
     const result = await authService.loginUser(username, password);
 
     res.status(200).send(result);
+}
+
+export async function accessFeed(req: Request, res: Response) {
+	const user = res.locals.user as IProfileData;
+
+	res.status(200).send(user);
 }

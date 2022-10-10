@@ -21,7 +21,7 @@ export async function insert(userData: ILoginData) {
     });
 }
 
-export async function findById(id: number) {
+export async function findById(id: string) {
     const user = await prisma.user.findUnique({
         where: { id }
     });

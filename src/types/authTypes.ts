@@ -4,7 +4,7 @@ export type IRegisterData = {
     username: string,
     email: string,
     password: string,
-    passwordConfirmation: string,
+    passwordConfirmation?: string,
 }
 
 export type ILoginData = {

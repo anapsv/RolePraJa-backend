@@ -1,9 +1,8 @@
 import joi from 'joi';
-import { INewPostData } from '../types/postTypes';
+import { IPostBody } from '../types/postTypes';
 
-const postSchema = joi.object<INewPostData>({
-    content: joi.string().max(180).required(),
-    image: joi.binary().optional()
+const postSchema = joi.object<IPostBody>({
+    content: joi.string().max(180).required()
 });
 
 export default postSchema;
